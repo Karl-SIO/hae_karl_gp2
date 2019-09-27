@@ -6,6 +6,7 @@
 #include <cstdlib> //#include <stdlib.h>
 #include <cstdio> //#include <stdio.h>
 #include <chrono> 
+#include <functional>
 
 /*
 int appel(int & s) {
@@ -31,10 +32,24 @@ Vec3 stackOverflow(Vec3 _in) {
 	return stackOverflow(temp);
 }
 
+void Strcpy(char * dst, const char * src)
+{
+	int i = 0;
+
+	while (true)
+	{
+		dst[i] = src[i];
+		if (src[i] == 0)
+			break;
+		i++;
+	}
+	// while (*dst++ = *src++);   Méthode complexe ultra condensé
+};
+
 int main()
 {
 	//Debug.Log(monobjet);
-    //std::cout << "Hello World!\n"; 
+	//std::cout << "Hello World!\n"; 
 
 	//int foo = 0;
 
@@ -56,7 +71,7 @@ int main()
 	const char labelBug[5] = { 's', 'a', 'p', 'i', 'n' };
 	printf("Hello world : lb : %s\n", labelBug);
 	*/
-	
+
 	int x = 66;
 	//x = appel(x);
 	printf("xval: %d\n", x);
@@ -99,6 +114,8 @@ int main()
 	Vec3 * t3 = t2 + 1;
 	t2++;
 
+	/* Accès à la mémoire (F9 pour balise rouge debug)
+
 	auto start = std::chrono::system_clock::now();
 	int * bigBlock = (int*) malloc(1024 * 1024 * 1024);
 	for (int k = 0; k < 64 * 1024 * 1024; ++k) {
@@ -110,6 +127,46 @@ int main()
 	printf("time ? : %d\n", millis);
 
 	int _i = 0;
+	*/
+
+	/*
+	Vec3 tableau[16];
+
+	Vec3 *tableau0 = (Vec3*)malloc(sizeof(Vec3) * 16); // en C pur
+	memset(tableau, 0, sizeof(Vec3) * 16);
+
+	Vec3 *tableau1 = (Vec3*)calloc(sizeof(Vec3), 16); // en C pur
+
+	Vec3 *tableau2 = new Vec3[16]; // en C++
+	Vec3 * unSeulVec = new Vec3(); // en C++ allocation dynamique
+	Vec3 unSeulVecAussiMaisSurLeTas = Vec3(); // en C++ allocation statique
+
+	int _i = 0;
+	*/
+
+	// A function that returns the length of a char string
+	std::function<int(const char*)> Strlen = [](const char * src) 
+	{
+		int counter = 0;
+		const char * osrc = src;
+		//for (int i = 0; i < 1024; i++) 
+		while (true)
+		{
+			char current = *src;
+			if (current == 0)
+				break;
+			src++;
+			counter++;
+		}
+		return counter;
+	};
+
+	const char * source = "mon lapin est dodu";
+	char * dest = (char*)calloc(1024, sizeof(char));
+	Strcpy(dest, source);
+
+	//printf("dest val:%s len:%d\n", Strlen(source),dest);
+	printf("dest val: len:%d\n", Strlen(source));
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
