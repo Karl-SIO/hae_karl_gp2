@@ -1,0 +1,6 @@
+﻿  ConsoleApplication1.cpp
+c:\workspace\karl\hae_karl_gp2\cours1\consoleapplication1\consoleapplication1\consoleapplication1.cpp(81): warning C4477: 'printf' : la chaîne de format '%f' nécessite un argument de type 'double', mais l'argument variadique 1 est de type 'int'
+c:\workspace\karl\hae_karl_gp2\cours1\consoleapplication1\consoleapplication1\consoleapplication1.cpp(93): warning C4477: 'printf' : la chaîne de format '%f' nécessite un argument de type 'double', mais l'argument variadique 1 est de type 'int'
+c:\workspace\karl\hae_karl_gp2\cours1\consoleapplication1\consoleapplication1\consoleapplication1.cpp(95): warning C4477: 'printf' : la chaîne de format '%f' nécessite un argument de type 'double', mais l'argument variadique 1 est de type 'Vec3'
+c:\workspace\karl\hae_karl_gp2\cours1\consoleapplication1\consoleapplication1\consoleapplication1.cpp(33): warning C4717: 'stackOverflow' : récurrent sur tous les chemins d'accès de contrôle, la fonction entraînera un dépassement de capacité de la pile d'exécution
+  ConsoleApplication1.vcxproj -> C:\Workspace\karl\hae_karl_gp2\Cours1\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe
