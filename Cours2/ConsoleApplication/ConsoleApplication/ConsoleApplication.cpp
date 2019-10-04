@@ -6,6 +6,8 @@
 #include <cstring>
 #include <cstdio>
 
+static void TestRec();
+
 int StrChr(char * grange, char chat)
 {
 	/*
@@ -214,6 +216,82 @@ int main()
 	printf("le token est en position %d\n", pos); 
 	// environ 11
 	int a = 0;
+
+	TestRec();
+}
+
+int add_0(int a, int b)
+{
+	int i = 0;
+	for (i = 0; i < a + b; ++i)
+	return i;
+}
+
+int add_1(int a, int b)
+{
+	int val = a;
+	for (int i = 0; i < b; ++i)
+		val++;
+	return val;
+}
+
+int add_2(int a, int b)
+{
+	if (a == 0)
+		return b;
+	else
+		return add_2(a - 1, b + 1);
+}
+
+int add_3(int a, int b)
+{
+	if (a == 0)
+		return b;
+	else if (b == 0)
+		return a;
+	else
+		int inter = 1 + add_3(a - 1, b);
+		return 1 + add_3(a - 1, b);
+}
+
+int sub(int a, int b)
+{
+	printf("a = %d b = %d\n", a, b);
+	// Cas terminal
+	if (b == 0) return a;
+	if (a == 0) return b;
+	// Cas général b inf
+	if (b < 0) return sub(a + 1, b + 1);
+	// Cas général b inf
+	if (b> 0) return sub(a - 1, b - 1);
+}
+
+int sub2(int a, int b)
+{
+	if (b == 0) return a;
+	else if (b > 0)
+		return sub2(a, b - 1) - 1;
+	else
+		return sub2(a, b + 1) + 1;
+}
+
+int mul(int a, int b)
+{
+	printf("a = %d b = %d\n", a, b);
+	if (b == 0) return 0;
+	if (a == 0) return 0;
+	if (b > 0) return a + mul(a, b - 1);
+	// b < 0
+	return a - mul(a, -b + 1);
+}
+
+static void TestRec()
+{
+	//int foo = add_2(2, 2);
+	//int foo2 = add_3(3, 2);
+	//int foo3 = sub(3, 2);
+	int foo4 = mul(4, -2);
+	int i = 0;
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
