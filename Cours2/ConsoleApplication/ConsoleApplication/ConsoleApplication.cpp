@@ -319,18 +319,58 @@ int StrlenRec(const char * str)
 	else 1 + StrlenRec(str + 1);
 }
 
-int StrCpyRec(char * dst, const char * src)
+void StrCpyRec(char * dst, const char * src)
 {
 	*dst = *src;   // Copy the final zero
-	if (*src == 0) return 0;
+	if (*src == 0) return;
 	StrCpyRec(dst + 1, src + 1);
 }
 
-int ZeroMemory(char * dst, int size)
+void ZeroMemory(char * dst, int size)
 {
-	if (size == 0) return 0;
+	if (size == 0) return;
 	*dst = 0;
 	ZeroMemory(++dst, --size);
+}
+
+void MemcpyRec(char * dst, const char * src, int size)
+{
+	if (size == 0) return;
+	*dst = *src;
+	MemcpyRec(++dst, ++src, --size);
+}
+
+//Renvoyer -1 0 1 selon l'ordre lexicographique
+int StrcmpRec(char * str0, char * str1)
+{
+	if (*str0 == 0 && * str1 == 0) return 0;
+	if (*str0 == 0) return 1;
+	if (*str1 == 0) return -1;
+	if (*str1 == 0) return -1;
+	if (*str0 < *str1) return 1;
+	return StrcmpRec(str0 + 1, str1 + 1);
+}
+
+void StrcatRec(char * str0, char * str1)
+{
+	//Si str1 est vide sortit
+	if (str1 == 0) return;
+	//Si str0 est fini, copier str1 dans str0
+	if (str0 == 0)
+	{
+
+	}
+	//Sinon StrcatRec (avancer str0, str1)
+}
+
+char *  StrChrRec(char * str0, char tok)
+{
+	return nullptr;
+}
+
+char * StrStrRec(char * str0, char str1)
+{
+	return nullptr;
 }
 
 static void TestRec()
@@ -357,6 +397,15 @@ static void TestRec()
 	buffer[32] = 'X';
 	ZeroMemory(buffer, szBuf);
 	printf("%c", buffer[32]);
+
+	char toto[32];
+	char tata[32] = "It's me mariooo";
+	MemcpyRec(toto, tata, strlen(tata) + 1);
+	if (toto[0] != tata[0])
+	{
+		throw std::exception("hmm?");
+	}
+
 	system("pause");
 }
 

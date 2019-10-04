@@ -2,7 +2,5 @@
 c:\workspace\karl\hae_karl_gp2\cours2\consoleapplication\consoleapplication\consoleapplication.cpp(319): warning C4552: '+' : résultat de l'expression non utilisé
 c:\workspace\karl\hae_karl_gp2\cours2\consoleapplication\consoleapplication\consoleapplication.cpp(228): warning C4715: 'add_0' : les chemins de contrôle ne retournent pas tous une valeur
 c:\workspace\karl\hae_karl_gp2\cours2\consoleapplication\consoleapplication\consoleapplication.cpp(267): warning C4715: 'sub' : les chemins de contrôle ne retournent pas tous une valeur
-c:\workspace\karl\hae_karl_gp2\cours2\consoleapplication\consoleapplication\consoleapplication.cpp(327): warning C4715: 'StrCpyRec' : les chemins de contrôle ne retournent pas tous une valeur
 c:\workspace\karl\hae_karl_gp2\cours2\consoleapplication\consoleapplication\consoleapplication.cpp(320): warning C4715: 'StrlenRec' : les chemins de contrôle ne retournent pas tous une valeur
-c:\workspace\karl\hae_karl_gp2\cours2\consoleapplication\consoleapplication\consoleapplication.cpp(334): warning C4715: 'ZeroMemory' : les chemins de contrôle ne retournent pas tous une valeur
   ConsoleApplication.vcxproj -> C:\Workspace\karl\hae_karl_gp2\Cours2\ConsoleApplication\Debug\ConsoleApplication.exe
