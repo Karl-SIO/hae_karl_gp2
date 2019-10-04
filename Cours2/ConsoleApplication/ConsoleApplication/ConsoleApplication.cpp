@@ -80,6 +80,90 @@ int StrChr3(char * grange, char chat)
 	return -1;
 }
 
+char * StrStr(char * meuleDeFoin, char * aiguille)
+{
+	int lengthMeule = strlen(meuleDeFoin);
+	int lengthAiguille = strlen(aiguille);
+
+	for (int i = 0; i < lengthMeule; ++i)
+	{
+		bool found = true;
+
+		for (int j = 0; j < lengthAiguille; ++j)
+		{
+			if (meuleDeFoin[j] != aiguille[j])
+			{
+				found = false;
+				break;
+			}
+		}
+		if (found)
+		{
+			return meuleDeFoin;
+		}
+		meuleDeFoin++;
+	}
+	return nullptr;
+}
+/*
+char * StrStr2(char * meuleDeFoin, char * aiguille)
+{
+	int lengthMeule = strlen(meuleDeFoin);
+	int lengthAiguille = strlen(aiguille);
+
+	for (int i = 0; i < lengthMeule; ++i)
+	{
+		char contenuTemporaire[256];
+		strncpy(contenuTemporaire, meuleDeFoin + i, strlen(aiguille));
+
+		if (Strcmp(contenuTemporaire, aiguille) == 0)
+		{
+			return (meuleDeFoin + i);
+		}
+	}
+	return nullptr;
+}
+*/
+int Max(int a, int b)
+{
+	return (a < b) ? b : a;
+}
+int Min(int a, int b)
+{
+	return (a > b) ? a : b;
+}
+
+int Strcmp(char * meule, char * aiguille)
+{
+	//Return -1 si meule est inférieur lexicographiquement
+	//Return 1 si meule est supérieur lexicographiquement
+	//Return 0 si meule est égale à l'aiguille lexicographiquement
+
+	int lenMeule = strlen(meule);
+	int lenAiguille = strlen(aiguille);
+
+	int maxLen = Max(lenMeule, lenAiguille);
+	int minLen = Min(lenMeule, lenAiguille);
+
+	for (int i = 0; i < minLen; i++)
+	{
+		if (meule[i] < aiguille[i])
+		{
+			return -1;
+		}
+		else if(meule[i] > aiguille[i])
+		{
+			return 1;
+		}
+		// if equal continue;
+	}
+	// Une des deux chaines est plus courte que l'autre
+	if (minLen == maxLen) return 0;
+	if (maxLen == lenMeule) return 1;
+
+	return 1;
+}
+
 void Memcpy(char * dest, char * src, int size)
 {
 	while (size >= 0)
@@ -100,7 +184,7 @@ void Memcpy2(char * dest, char * src, int size)
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+    //std::cout << "Hello World!\n"; 
 
 	char licorne[32] = "licorne";
 	char vomi[32] = "vomit";
@@ -113,9 +197,23 @@ int main()
 
 	char chateau[32] = "chateau";
 	char soldat = 'e';
-
 	int posSoldat = StrChr2(chateau, soldat);
 	printf("le soldat est en position %d\n", posSoldat);
+
+	/*
+	char text1[] = "dragon";
+	char text2[] = "drag";
+	int ziText = Strcmp(text1, text2);
+	printf("alors %d\n", ziText);
+	*/
+
+	char text[1024] = "Lorem ipsum dolor sit amet";
+	char token[1024] = "dolor";
+	char * tokenInText = StrStr(text, token);
+	int pos = (int)(tokenInText - text);
+	printf("le token est en position %d\n", pos); 
+	// environ 11
+	int a = 0;
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
