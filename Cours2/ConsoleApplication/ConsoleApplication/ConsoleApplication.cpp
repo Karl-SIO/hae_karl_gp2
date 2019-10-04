@@ -277,7 +277,6 @@ int sub2(int a, int b)
 
 int mul(int a, int b)
 {
-	printf("a = %d b = %d\n", a, b);
 	if (b == 0) return 0;
 	if (a == 0) return 0;
 	if (b > 0) return a + mul(a, b - 1);
@@ -285,13 +284,80 @@ int mul(int a, int b)
 	return a - mul(a, -b + 1);
 }
 
+int div_rec(int a, int b)
+{
+	if (a == 0) return 0;
+	if (a < b) return 0;
+	if (b < 0 && a < 0) return -div_rec(a, b);
+	if (b < 0) return -div_rec(a, -b);
+	if (a < 0) return -div_rec(-a, b);
+	return -div_rec(a - b, b);
+}
+
+int mod(int a, int b)
+{
+	printf("a = %d b = %d\n", a, b);
+
+	return a - mul(b, div_rec(a, b));
+}
+
+int mod2(int a, int b)
+{
+	if (b < 0 && a < 0) return a;
+	if (a == 0) return 0;
+	if (b < 0) return -mod2(a, -b);
+	if (a < 0) return -mod2(-a, b);
+	return mod2(a - b, b);
+}
+
+int StrlenRec(const char * str)
+{
+	if (*str == 0)
+	{
+		return 0;
+	}
+	else 1 + StrlenRec(str + 1);
+}
+
+int StrCpyRec(char * dst, const char * src)
+{
+	*dst = *src;   // Copy the final zero
+	if (*src == 0) return 0;
+	StrCpyRec(dst + 1, src + 1);
+}
+
+int ZeroMemory(char * dst, int size)
+{
+	if (size == 0) return 0;
+	*dst = 0;
+	ZeroMemory(++dst, --size);
+}
+
 static void TestRec()
 {
 	//int foo = add_2(2, 2);
 	//int foo2 = add_3(3, 2);
 	//int foo3 = sub(3, 2);
-	int foo4 = mul(4, -2);
+	//int foo4 = mul(4, -2);
+	//int foo5 = div_rec(8, 4);
+	//int foo6 = mod(15, 4);
+	//int foo7 = mod2(15, 4); ça merde
+	
+	//int i = 0;
+
+	int len = StrlenRec("sapin");
+	printf("%d\n", len);
+
+	char dst[150];
+	StrCpyRec(dst, "chene");
 	int i = 0;
+
+	int szBuf = 32;
+	char * buffer = (char*)malloc(szBuf + 1);
+	buffer[32] = 'X';
+	ZeroMemory(buffer, szBuf);
+	printf("%c", buffer[32]);
+	system("pause");
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
