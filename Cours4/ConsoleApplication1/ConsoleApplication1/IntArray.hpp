@@ -162,4 +162,69 @@ public:
 			}
 		}
 	}
+
+	// 4
+	// 3 parcours * 2 reparcours et permutation
+
+	// n
+	// 2 n
+
+	// tableau de taille[n]
+	// n-1 parcours * n-2 parcours
+	// n^2
+
+	// renvoie la position où on devrait s'inserer
+	int binarySearch(int key)
+	{
+		//demander la recherche entre 0 et la taille
+		/*
+		for (int position = 0; position <= key; position++)
+			return position;
+			*/
+		return _binarySearch(key, 0, curSize);
+	}
+	int _binarySearch(int key, int start, int end)
+	{
+		printf("%d s:%d e:%d\n", key, start, end);
+		if (end <= start) return start;
+		if (end == start + 1)
+		{
+			if (key > data[start]) return end;
+			if (key < data[end]) return start;
+			return start;
+		}
+		/*
+		int pivot = end/2;
+
+		if(key < data[pivot])
+			//chercher à gauche ?
+			for (int i = pivot; i != 0; i--)
+				;
+		else
+			//chercher à droite
+			for (int i = pivot; i < end; i++)
+				;
+		*/
+
+		int pivot = (end + start) / 2;
+		if (key == data[pivot])
+			return pivot;
+		//if (key >= data[pivot]) return pivot - 1;
+		//if (key >= data[pivot]) return pivot + 1;
+		if (key < data[pivot])
+			//chercher à gauche ?
+			return _binarySearch(key, start, pivot - 1);
+		else
+			//chercher à droite
+			return _binarySearch(key, pivot + 1, end);
+		
+		//as t'on déjà fini (start et end similaire ou tellement proche que la solution est facile
+
+		//sinon
+		//trouver le pivot (milieu du tableau)
+		//se comparer au pivot
+		//est ce qu'on part à gauche ?
+		//est ce qu'on part à droite ?
+		//demander le sous résultat ! 
+	}
 };
