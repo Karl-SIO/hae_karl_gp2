@@ -1,0 +1,3 @@
+﻿  App.cpp
+c:\workspace\karl\hae_karl_gp2\tp1\consoleapplication1\consoleapplication1\app.cpp(100): warning C4101: 'f' : variable locale non référencée
+  ConsoleApplication1.vcxproj -> C:\Workspace\karl\hae_karl_gp2\TP1\ConsoleApplication1\Debug\App.exe
