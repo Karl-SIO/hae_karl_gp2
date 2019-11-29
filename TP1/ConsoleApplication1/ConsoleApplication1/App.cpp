@@ -7,10 +7,17 @@
 
 using namespace sf;
 
+static sf::Shader * simpleShader = nullptr;
+static sf::Shader * redShader = nullptr;
+static sf::Shader * bloomShader = nullptr;
+static sf::Shader * blurShader = nullptr;
+static sf::Texture * whiteTex = nullptr;
+static sf::Texture * murTex = nullptr;
+
 #pragma region Creation des entites et de leurs boxs de collisions
 
-sf::CircleShape hero(20.f, 4);
-	CircleShape enemy;
+sf::CircleShape hero(40.f, 4);
+sf::CircleShape enemy(40.f, 4);
 sf::RectangleShape wallO(sf::Vector2f(50, 1200));
 sf::RectangleShape wallN(sf::Vector2f(2000, 50));
 sf::RectangleShape wallE(sf::Vector2f(50, 1200));
@@ -35,10 +42,37 @@ public:
 
 int main()
 {
+	#pragma region Pour les Shaders
+
+	if (!sf::Shader::isAvailable())
+	{
+		printf("no shader avail\n");
+	}
+
+	simpleShader = new Shader();
+	if (!simpleShader->loadFromFile("res/simple.vert", "res/simple.frag"))
+	{
+		printf("unable to load shaders\s");
+	}
+
+	whiteTex = new Texture();
+	if (!whiteTex->create(1, 1)) printf("tex crea failed\n");
+	whiteTex->setSmooth(true);
+	unsigned int col = 0xffffffff;
+	whiteTex->update((const sf::Uint8*)&col, 1, 1, 0, 0);
+
+	murTex = new Texture();
+	if (!murTex->loadFromFile("res/mur.jpg"))
+	{
+		printf("Rip le mur\s");
+	}
+
+	#pragma endregion
+
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 10;
 
-	sf::RenderWindow window(sf::VideoMode(1920, 1080), "SFML works!" , Style::Fullscreen);   // Taille de la fenetre
+	sf::RenderWindow window(sf::VideoMode(1920, 1080), "SFML works!" /*, Style::Fullscreen*/);   // Taille de la fenetre
 
 	#pragma region Pour les tirs
 
@@ -60,39 +94,34 @@ int main()
 	hero.setFillColor(sf::Color::Cyan);	// Couleur
 	hero.setOutlineThickness(4);
 	hero.setOutlineColor(sf::Color::Blue);
+	hero.setTexture(whiteTex);	// Shader
 
-	enemy.setPosition(600, 400);
-	enemy.setFillColor(sf::Color::Magenta);	// Couleur
+	enemy.setPosition(400, 600);
+	enemy.setFillColor(sf::Color(255, 146, 0));	// Couleur
 	enemy.setOutlineThickness(4);
 	enemy.setOutlineColor(sf::Color::Red);
 
 	wallO.setPosition(0, 0);
 	wallO.setFillColor(sf::Color::Black);	// Couleur
 	wallO.setOutlineThickness(4);
-	wallO.setOutlineColor(sf::Color::Red);
+	wallO.setOutlineColor(sf::Color(186, 184, 185));
 
 	wallN.setPosition(0, 0);
 	wallN.setFillColor(sf::Color::Black);	// Couleur
 	wallN.setOutlineThickness(4);
-	wallN.setOutlineColor(sf::Color::Red);
+	wallN.setOutlineColor(sf::Color(186, 184, 185));
 
 	wallE.setPosition(1875, 0);
 	wallE.setFillColor(sf::Color::Black);	// Couleur
 	wallE.setOutlineThickness(4);
-	wallE.setOutlineColor(sf::Color::Red);
+	wallE.setOutlineColor(sf::Color(186, 184, 185));
 
 	wallS.setPosition(0, 1035);
 	wallS.setFillColor(sf::Color::Black);	// Couleur
 	wallS.setOutlineThickness(4);
-	wallS.setOutlineColor(sf::Color::Red);
+	wallS.setOutlineColor(sf::Color(186, 184, 185));
 
 	#pragma endregion 
-
-	#pragma region Ennemis
-
-
-
-	#pragma endregion
 
 	window.setVerticalSyncEnabled(true);
 
@@ -117,46 +146,39 @@ int main()
 		aimDir = mousePos - playerCenter;
 		aimDirNorm = aimDir / sqrt(pow(aimDir.x, 2) + pow(aimDir.y, 2));
 
-		while (window.pollEvent(event))
+		if (Keyboard::isKeyPressed(Keyboard::Q))
 		{
-			switch (event.type)
-			{				
-				case sf::Event::KeyPressed :					
-					if (event.key.code == sf::Keyboard::Q)
-						hero.move(-10.f, 0.f);
-					if (event.key.code == sf::Keyboard::D)
-						hero.move(10.f, 0.f);
-					if (event.key.code == sf::Keyboard::Z)
-						hero.move(0.f, -10.f);
-					if (event.key.code == sf::Keyboard::S)
-						hero.move(0.f, 10.f);
-					break;
-
-				case sf::Event::Closed :
-					window.close();
-					break;
-
-				default:
-					break;
-			}	
-			if (Mouse::isButtonPressed(Mouse::Left))
-			{
-				tir.shot.setPosition(playerCenter);
-				tir.currVelocity = aimDirNorm * tir.maxSpeed;
-
-				tirs.push_back(Shoot(tir));
-			}
-			for (size_t i = 0; i < tirs.size(); i++)
-			{
-				tirs[i].shot.move(tirs[i].currVelocity);
-
-				if (tirs[i].shot.getPosition().x < 0 || tirs[i].shot.getPosition().x > window.getSize().x ||
-					tirs[i].shot.getPosition().y < 0 || tirs[i].shot.getPosition().y > window.getSize().y)
-				{
-					tirs.erase(tirs.begin() + i);
-				}
-			}
+			hero.move(-10.f, 0.f);
 		}
+		if (Keyboard::isKeyPressed(Keyboard::D))
+		{
+			hero.move(10.f, 0.f);
+		}
+		if (Keyboard::isKeyPressed(Keyboard::Z))
+		{
+			hero.move(0.f, -10.f);
+		}
+		if (Keyboard::isKeyPressed(Keyboard::S))
+		{
+			hero.move(0.f, 10.f);
+		}
+		if (Mouse::isButtonPressed(Mouse::Left))
+		{
+			tir.shot.setPosition(playerCenter);
+			tir.currVelocity = aimDirNorm * tir.maxSpeed;
+
+			tirs.push_back(Shoot(tir));
+		}
+		for (size_t i = 0; i < tirs.size(); i++)
+		{
+			tirs[i].shot.move(tirs[i].currVelocity);
+
+			if (tirs[i].shot.getPosition().x < 0 || tirs[i].shot.getPosition().x > window.getSize().x ||
+				tirs[i].shot.getPosition().y < 0 || tirs[i].shot.getPosition().y > window.getSize().y)
+			{
+				tirs.erase(tirs.begin() + i);
+			}
+		}		
 
 	#pragma region Tests de collision des 4 murs Ouest, Nord, Est et Sud
 
@@ -180,7 +202,8 @@ int main()
 	#pragma endregion 
 		
 		window.clear();   // Nettoie la frame
-		window.draw(hero);
+		window.draw(hero, simpleShader);
+		window.draw(enemy);
 
 		for (size_t i = 0; i < tirs.size(); i++)
 		{
