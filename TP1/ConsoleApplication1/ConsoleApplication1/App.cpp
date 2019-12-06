@@ -38,7 +38,13 @@ public:
 		this->shot.setRadius(radius);
 		this->shot.setFillColor(Color::Cyan);
 	};
+
 };
+
+int heroLife = 10;
+bool heroDead = false;
+int enemyLife = 10;
+bool enemyDead = false;
 
 int main()
 {
@@ -72,7 +78,7 @@ int main()
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 10;
 
-	sf::RenderWindow window(sf::VideoMode(1920, 1080), "SFML works!" /*, Style::Fullscreen*/);   // Taille de la fenetre
+	sf::RenderWindow window(sf::VideoMode(1280, 720), "SFML works!" /*, Style::Fullscreen*/);   // Taille de la fenetre
 
 	#pragma region Pour les tirs
 
@@ -138,13 +144,16 @@ int main()
 	{
 		sf::Event event;   // Recup les evenements clavier/souris	
 
-		Vector2f lastGoodPos = hero.getPosition();
+		Vector2f lastGoodPosHero = hero.getPosition();
+		Vector2f lastGoodPosEnemy = enemy.getPosition();
 
 		// Pour les tirs
 		playerCenter = Vector2f(hero.getPosition().x + hero.getRadius(), hero.getPosition().y + hero.getRadius());
 		mousePos = Vector2f(Mouse::getPosition(window));
 		aimDir = mousePos - playerCenter;
 		aimDirNorm = aimDir / sqrt(pow(aimDir.x, 2) + pow(aimDir.y, 2));
+
+		#pragma region Commandes Clavier/Souris (Hero/J1)
 
 		if (Keyboard::isKeyPressed(Keyboard::Q))
 		{
@@ -178,32 +187,105 @@ int main()
 			{
 				tirs.erase(tirs.begin() + i);
 			}
-		}		
+		}
 
-	#pragma region Tests de collision des 4 murs Ouest, Nord, Est et Sud
+		#pragma endregion 
 
+		// A FINIR !!!
+		#pragma region Commandes Manette (Enemy/J2)
+
+		if (sf::Joystick::isConnected(0))   // SI le joystick numéro 0 est connecté
+		{		
+			//printf("Manette connectée");   OK
+		}
+
+		if (sf::Joystick::isButtonPressed(0, 1))
+		{
+			printf("OK");
+		}
+
+		sf::Vector2f moveSpeed(sf::Joystick::getAxisPosition(0, sf::Joystick::X),
+			sf::Joystick::getAxisPosition(0, sf::Joystick::Y));
+		/*
+		if (moveSpeed.x > 0.2)
+				enemy.move(10.f, 0.f);
+		if (moveSpeed.x < -0.2)
+				enemy.move(-10.f, 0.f);
+		if (moveSpeed.y < -0.2)
+				enemy.move(0.f, -10.f);
+		if (moveSpeed.y > 0.2)
+				enemy.move(0.f, 10.f);
+*/
+
+		#pragma endregion
+
+		#pragma region Tests de collision des 4 murs Ouest, Nord, Est et Sud
+
+		// Pour Hero/J1
 		if (hero.getGlobalBounds().intersects(wallO.getGlobalBounds()))
 		{
-			hero.setPosition(lastGoodPos);
+			hero.setPosition(lastGoodPosHero);
 		}
 		if (hero.getGlobalBounds().intersects(wallN.getGlobalBounds()))
 		{
-			hero.setPosition(lastGoodPos);
+			hero.setPosition(lastGoodPosHero);
 		}
 		if (hero.getGlobalBounds().intersects(wallE.getGlobalBounds()))
 		{
-			hero.setPosition(lastGoodPos);
+			hero.setPosition(lastGoodPosHero);
 		}
 		if (hero.getGlobalBounds().intersects(wallS.getGlobalBounds()))
 		{
-			hero.setPosition(lastGoodPos);
+			hero.setPosition(lastGoodPosHero);
+		}
+		if (hero.getGlobalBounds().intersects(enemy.getGlobalBounds()))
+		{
+			hero.setPosition(lastGoodPosHero);
+		}
+		// Pour Enemy/J2
+		if (enemy.getGlobalBounds().intersects(wallO.getGlobalBounds()))
+		{
+			enemy.setPosition(lastGoodPosEnemy);
+		}
+		if (enemy.getGlobalBounds().intersects(wallN.getGlobalBounds()))
+		{
+			enemy.setPosition(lastGoodPosEnemy);
+		}
+		if (enemy.getGlobalBounds().intersects(wallE.getGlobalBounds()))
+		{
+			enemy.setPosition(lastGoodPosEnemy);
+		}
+		if (enemy.getGlobalBounds().intersects(wallS.getGlobalBounds()))
+		{
+			enemy.setPosition(lastGoodPosEnemy);
+		}
+		if (enemy.getGlobalBounds().intersects(hero.getGlobalBounds()))
+		{
+			enemy.setPosition(lastGoodPosEnemy);
 		}
 
-	#pragma endregion 
+		#pragma endregion 
+
+		#pragma region Tests de collision des tirs
+
+		if (hero.getGlobalBounds().intersects(enemy.getGlobalBounds()))
+		{
+			enemyDead = true;
+			printf("OK");
+		}
+
+		#pragma endregion
 		
 		window.clear();   // Nettoie la frame
-		window.draw(hero, simpleShader);
-		window.draw(enemy);
+
+		if (heroDead == false)
+		{
+			window.draw(hero/*, simpleShader*/);
+		}
+		if (enemyDead == false)
+		{
+			window.draw(enemy);
+		}
 
 		for (size_t i = 0; i < tirs.size(); i++)
 		{

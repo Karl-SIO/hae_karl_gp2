@@ -1,6 +1,6 @@
 ﻿  App.cpp
-c:\workspace\karl\hae_karl_gp2\tp1\consoleapplication1\consoleapplication1\app.cpp(55): warning C4129: 's' : caractère de séquence d'échappement non reconnu
-c:\workspace\karl\hae_karl_gp2\tp1\consoleapplication1\consoleapplication1\app.cpp(67): warning C4129: 's' : caractère de séquence d'échappement non reconnu
-c:\workspace\karl\hae_karl_gp2\tp1\consoleapplication1\consoleapplication1\app.cpp(129): warning C4101: 'f' : variable locale non référencée
-c:\workspace\karl\hae_karl_gp2\tp1\consoleapplication1\consoleapplication1\app.cpp(139): warning C4101: 'event' : variable locale non référencée
+c:\workspace\karl\hae_karl_gp2\tp1\consoleapplication1\consoleapplication1\app.cpp(61): warning C4129: 's' : caractère de séquence d'échappement non reconnu
+c:\workspace\karl\hae_karl_gp2\tp1\consoleapplication1\consoleapplication1\app.cpp(73): warning C4129: 's' : caractère de séquence d'échappement non reconnu
+c:\workspace\karl\hae_karl_gp2\tp1\consoleapplication1\consoleapplication1\app.cpp(135): warning C4101: 'f' : variable locale non référencée
+c:\workspace\karl\hae_karl_gp2\tp1\consoleapplication1\consoleapplication1\app.cpp(145): warning C4101: 'event' : variable locale non référencée
   ConsoleApplication1.vcxproj -> C:\Workspace\karl\hae_karl_gp2\TP1\ConsoleApplication1\Debug\App.exe
