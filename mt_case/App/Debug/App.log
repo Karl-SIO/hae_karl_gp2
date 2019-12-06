@@ -59,4 +59,5 @@ c:\workspace\karl\hae_karl_gp2\mt_case\app\lib.cpp(107): warning C4244: '/=' : 
           ]
 c:\workspace\karl\hae_karl_gp2\mt_case\app\lib.cpp(136): warning C4244: 'argument' : conversion de 'double' en 'float32', perte possible de données
   Génération de code en cours...
+  LINK : C:\Workspace\karl\hae_karl_gp2\mt_case\App\Debug\App.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
   App.vcxproj -> C:\Workspace\karl\hae_karl_gp2\mt_case\App\Debug\App.exe

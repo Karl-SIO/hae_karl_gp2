@@ -18,6 +18,6 @@ public:
 	}
 
 	void draw(sf::RenderWindow & win) {
-		win.draw(win);
+		//win.draw(win);
 	}
 };
