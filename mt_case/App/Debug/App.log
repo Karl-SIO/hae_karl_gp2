@@ -1,4 +1,6 @@
 ﻿  App.cpp
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.hpp(33): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.hpp(34): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
 c:\workspace\karl\hae_karl_gp2\mt_case\app\fadingparticle.h(18): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
@@ -26,38 +28,27 @@ c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(219): warning C4244: 'argumen
           [
               T=float
           ]
-c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(236): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(302): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(238): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(304): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=float
           ]
-c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(353): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(355): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=float
           ]
-c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(359): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
-c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(374): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
-c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(375): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(361): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(376): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(377): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
           with
           [
               T=float
           ]
-c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(388): warning C4244: 'argument' : conversion de 'double' en 'float32', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(390): warning C4244: 'argument' : conversion de 'double' en 'float32', perte possible de données
   Game.cpp
-  Lib.cpp
-c:\workspace\karl\hae_karl_gp2\mt_case\app\lib.cpp(106): warning C4244: '/=' : conversion de 'double' en 'T', perte possible de données
-          with
-          [
-              T=float
-          ]
-c:\workspace\karl\hae_karl_gp2\mt_case\app\lib.cpp(107): warning C4244: '/=' : conversion de 'double' en 'T', perte possible de données
-          with
-          [
-              T=float
-          ]
-c:\workspace\karl\hae_karl_gp2\mt_case\app\lib.cpp(136): warning C4244: 'argument' : conversion de 'double' en 'float32', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.hpp(33): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.hpp(34): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
   Génération de code en cours...
-  LINK : C:\Workspace\karl\hae_karl_gp2\mt_case\App\Debug\App.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
   App.vcxproj -> C:\Workspace\karl\hae_karl_gp2\mt_case\App\Debug\App.exe
