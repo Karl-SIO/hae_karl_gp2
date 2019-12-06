@@ -1,26 +1,36 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-
 using namespace sf;
+
+
+enum EntityState {
+	ES_IDLE,
+	ES_RUNNING,
+	ES_FALLING,
+};
 
 class Entity {
 public:
+	EntityState	state = ES_IDLE;
 
-	int CELL_WIDTH = 16;
+	int CELL_WIDTH = 16; // taille de chaque case width
 
 	int cx = 0;
 	int cy = 0;
 
-	float rx = 0.5;
-	float ry = 0.5;
+	float rx = 0.5f;
+	float ry = 0.5f;
 
 	float dx = 0.0f;
 	float dy = 0.0f;
 
+	float gy = 0.03f;
 
 	float pixelX = 0.0;
 	float pixelY = 0.0;
+
+	bool applyGravity = false;
 
 	sf::Shape * spr;
 
@@ -28,20 +38,14 @@ public:
 		this->spr = spr;
 	}
 
-	void setPos(float pixelX, float pixelY)
-	{
-		cx = pixelX / CELL_WIDTH;
-		cy = pixelY / CELL_WIDTH;
-
-		rx = (pixelX - (cx*CELL_WIDTH)) / CELL_WIDTH;   // reste de cx pour aller à rx
-		ry = (pixelY - (cy*CELL_WIDTH)) / CELL_WIDTH;
-
-		syncCoord();
+	void setPos(float crx, float cry) {
+		rx += crx;
+		ry += crx;
 	}
 
-	void update(double dt) {
-		syncCoord();
-	}
+	void setPosPixel(float pixelX, float pixelY);
+
+	void update(double dt);
 
 	void syncCoord() {
 		pixelX = cx * CELL_WIDTH + rx * CELL_WIDTH;
@@ -49,7 +53,8 @@ public:
 		spr->setPosition(pixelX, pixelY);
 	}
 
-	void draw(sf::RenderWindow & win) {
-		win.draw(*spr);
-	}
+	void draw(sf::RenderWindow & win);
+
+	void changeState(EntityState nes);
+
 };

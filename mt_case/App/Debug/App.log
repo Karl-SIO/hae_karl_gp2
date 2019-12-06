@@ -1,54 +1,140 @@
 ﻿  App.cpp
-c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.hpp(33): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
-c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.hpp(34): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
 c:\workspace\karl\hae_karl_gp2\mt_case\app\fadingparticle.h(18): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=float
           ]
-c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(207): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(209): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=float
           ]
-c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(210): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
-c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(211): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(212): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(213): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=float
           ]
-c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(215): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(217): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=float
           ]
-c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(218): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
-c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(219): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(220): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(221): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=float
           ]
-c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(238): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(304): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(239): error C2597: référence non conforme à un membre non static 'Entity::CELL_WIDTH'
+  c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(239): note: voir la déclaration de 'Entity::CELL_WIDTH'
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(239): error C3535: impossible de déduire le type de 'auto' à partir de 'unknown'
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(239): error C2440: 'initialisation' : impossible de convertir de 'unknown' en 'int'
+  c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(239): note: Aucun contexte dans lequel cette conversion est possible
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(240): warning C4244: 'initialisation' : conversion de 'T' en 'int', perte possible de données
           with
           [
               T=float
           ]
-c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(355): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(241): warning C4244: 'initialisation' : conversion de 'T' en 'int', perte possible de données
           with
           [
               T=float
           ]
-c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(361): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
-c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(376): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
-c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(377): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(250): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(316): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=float
           ]
-c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(390): warning C4244: 'argument' : conversion de 'double' en 'float32', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(368): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(374): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(389): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(390): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\karl\hae_karl_gp2\mt_case\app\app.cpp(403): warning C4244: 'argument' : conversion de 'double' en 'float32', perte possible de données
+  Entity.cpp
+c:\workspace\karl\hae_karl_gp2\mt_case\app\fadingparticle.h(18): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(26): error C3861: 'willCollide' : identificateur introuvable
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(31): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(32): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(38): error C3861: 'willCollide' : identificateur introuvable
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(43): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(44): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(62): error C3861: 'willCollide' : identificateur introuvable
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(68): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(70): error C3861: 'getState' : identificateur introuvable
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(79): error C3861: 'willCollide' : identificateur introuvable
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(85): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(91): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(93): error C3861: 'getState' : identificateur introuvable
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(97): error C3861: 'getState' : identificateur introuvable
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(98): error C3861: 'dropParticles' : identificateur introuvable
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(104): error C2039: 'dropParticles' : n'est pas membre de 'Entity'
+  c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.hpp(13): note: voir la déclaration de 'Entity'
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(106): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(114): error C2065: 'pixelX' : identificateur non déclaré
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(114): error C2065: 'pixelY' : identificateur non déclaré
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(127): error C2065: 'pixelX' : identificateur non déclaré
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(127): error C2065: 'pixelY' : identificateur non déclaré
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(147): error C3861: 'getStateName' : identificateur introuvable
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(161): warning C4065: l'instruction switch contient 'default' mais aucune étiquette 'case'
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(167): warning C4065: l'instruction switch contient 'default' mais aucune étiquette 'case'
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(172): error C2039: 'willCollide' : n'est pas membre de 'Entity'
+  c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.hpp(13): note: voir la déclaration de 'Entity'
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(174): error C2355: 'this' : ne peut être référencé qu'à l'intérieur de fonctions membres non static ou d'initialiseurs de membres de données non static
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(177): error C2039: 'getStateName' : n'est pas membre de 'Entity'
+  c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.hpp(13): note: voir la déclaration de 'Entity'
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(178): error C2065: 'state' : identificateur non déclaré
+c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.cpp(179): error C2050: expression de switch non intégrale
   Game.cpp
-c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.hpp(33): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
-c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.hpp(34): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(27): error C2597: référence non conforme à un membre non static 'Entity::CELL_WIDTH'
+  c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(27): note: voir la déclaration de 'Entity::CELL_WIDTH'
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(27): error C3867: 'Entity::CELL_WIDTH' : syntaxe non-standard ; utilisez '&' pour créer un pointeur vers un membre
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(27): error C2568: '/' : impossible de résoudre la surcharge de fonction
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(28): error C2597: référence non conforme à un membre non static 'Entity::CELL_WIDTH'
+  c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(28): note: voir la déclaration de 'Entity::CELL_WIDTH'
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(28): error C3867: 'Entity::CELL_WIDTH' : syntaxe non-standard ; utilisez '&' pour créer un pointeur vers un membre
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(28): error C2568: '/' : impossible de résoudre la surcharge de fonction
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(41): warning C4244: '+=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(42): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(43): error C2039: 'getState' : n'est pas membre de 'Entity'
+  c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.hpp(13): note: voir la déclaration de 'Entity'
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(46): warning C4244: '-=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(47): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(48): error C2039: 'getState' : n'est pas membre de 'Entity'
+  c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.hpp(13): note: voir la déclaration de 'Entity'
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(52): error C2039: 'getState' : n'est pas membre de 'Entity'
+  c:\workspace\karl\hae_karl_gp2\mt_case\app\entity.hpp(13): note: voir la déclaration de 'Entity'
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(53): warning C4305: '-=' : troncation de 'double' à 'float'
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(82): error C2597: référence non conforme à un membre non static 'Entity::CELL_WIDTH'
+  c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(82): note: voir la déclaration de 'Entity::CELL_WIDTH'
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(82): error C3535: impossible de déduire le type de 'auto' à partir de 'unknown'
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(82): error C2440: 'initialisation' : impossible de convertir de 'unknown' en 'int'
+  c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(82): note: Aucun contexte dans lequel cette conversion est possible
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(85): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(87): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(111): error C2597: référence non conforme à un membre non static 'Entity::CELL_WIDTH'
+  c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(111): note: voir la déclaration de 'Entity::CELL_WIDTH'
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(111): error C3867: 'Entity::CELL_WIDTH' : syntaxe non-standard ; utilisez '&' pour créer un pointeur vers un membre
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(111): error C2568: '/' : impossible de résoudre la surcharge de fonction
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(112): error C2597: référence non conforme à un membre non static 'Entity::CELL_WIDTH'
+  c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(112): note: voir la déclaration de 'Entity::CELL_WIDTH'
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(112): error C3867: 'Entity::CELL_WIDTH' : syntaxe non-standard ; utilisez '&' pour créer un pointeur vers un membre
+c:\workspace\karl\hae_karl_gp2\mt_case\app\game.cpp(112): error C2568: '/' : impossible de résoudre la surcharge de fonction
   Génération de code en cours...
-  App.vcxproj -> C:\Workspace\karl\hae_karl_gp2\mt_case\App\Debug\App.exe
