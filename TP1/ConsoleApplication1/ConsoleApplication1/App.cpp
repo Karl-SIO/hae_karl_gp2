@@ -194,28 +194,41 @@ int main()
 		// A FINIR !!!
 		#pragma region Commandes Manette (Enemy/J2)
 
+		sf::Clock clock;
+
 		if (sf::Joystick::isConnected(0))   // SI le joystick numéro 0 est connecté
-		{		
-			//printf("Manette connectée");   OK
-		}
-
-		if (sf::Joystick::isButtonPressed(0, 1))
 		{
-			printf("OK");
+			printf("Manette connectee \n");
+		}
+		else
+		{
+			printf("Manette NON connectee \n");
 		}
 
-		sf::Vector2f moveSpeed(sf::Joystick::getAxisPosition(0, sf::Joystick::X),
-			sf::Joystick::getAxisPosition(0, sf::Joystick::Y));
 		/*
+		sf::Vector2f moveSpeed(sf::Joystick::getAxisPosition(0, sf::Joystick::X), sf::Joystick::getAxisPosition(0, sf::Joystick::Y));
+		
+		printf("VALS %f %f \n", moveSpeed.x, moveSpeed.y);
+
 		if (moveSpeed.x > 0.2)
-				enemy.move(10.f, 0.f);
-		if (moveSpeed.x < -0.2)
-				enemy.move(-10.f, 0.f);
-		if (moveSpeed.y < -0.2)
-				enemy.move(0.f, -10.f);
-		if (moveSpeed.y > 0.2)
-				enemy.move(0.f, 10.f);
-*/
+				//enemy.move(10.f, 0.f);
+			printf("Go O \n");
+		else if (moveSpeed.x < -0.2)
+				//enemy.move(-10.f, 0.f);
+			printf("Go E \n");
+		else if (moveSpeed.y < -0.2)
+				//enemy.move(0.f, -10.f);
+			printf("Manette NON connectee \n");
+		else if (moveSpeed.y > 0.2)
+				//enemy.move(0.f, 10.f);
+			printf("Manette NON connectee \n");
+
+		enemy.move(moveSpeed.x * clock.getElapsedTime().asSeconds(), moveSpeed.y * clock.getElapsedTime().asSeconds());
+		*/
+
+		float x = sf::Joystick::getAxisPosition(0, sf::Joystick::X);
+		float y = sf::Joystick::getAxisPosition(0, sf::Joystick::Y);
+		enemy.move(x, y);
 
 		#pragma endregion
 
