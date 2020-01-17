@@ -1,0 +1,103 @@
+﻿  App.cpp
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\entity.hpp(68): warning C4305: 'initialisation' : troncation de 'double' à 'float'
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\fadingparticle.h(18): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\app.cpp(209): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\app.cpp(212): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\app.cpp(213): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\app.cpp(217): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\app.cpp(220): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\app.cpp(221): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\app.cpp(240): warning C4244: 'initialisation' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\app.cpp(241): warning C4244: 'initialisation' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\app.cpp(250): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\app.cpp(305): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\app.cpp(341): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\app.cpp(393): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\app.cpp(399): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\app.cpp(414): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\app.cpp(415): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\app.cpp(428): warning C4244: 'argument' : conversion de 'double' en 'float32', perte possible de données
+  Dijkstra.cpp
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\dijkstra.cpp(19): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\dijkstra.cpp(25): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
+  Entity.cpp
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\entity.hpp(68): warning C4305: 'initialisation' : troncation de 'double' à 'float'
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\fadingparticle.h(18): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\entity.cpp(150): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\entity.cpp(151): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\entity.cpp(162): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\entity.cpp(163): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\entity.cpp(185): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\entity.cpp(200): warning C4305: '=' : troncation de 'double' à 'float'
+  Game.cpp
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\entity.hpp(68): warning C4305: 'initialisation' : troncation de 'double' à 'float'
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\game.cpp(72): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\game.cpp(75): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+  Lib.cpp
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\lib.cpp(106): warning C4244: '/=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\lib.cpp(107): warning C4244: '/=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\karl\hae_karl_gp2\mt_case_2\app\lib.cpp(136): warning C4244: 'argument' : conversion de 'double' en 'float32', perte possible de données
+  Génération de code en cours
+  All 1273 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Fin de la génération du code
+  App.vcxproj -> C:\Workspace\karl\hae_karl_gp2\mt_case_2\App\Release\App.exe
